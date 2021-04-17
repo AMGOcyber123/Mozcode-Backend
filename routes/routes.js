@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const User = require('../models/User')
 
@@ -24,7 +25,7 @@ router.post('/signup', async (req, res) => {
     }
 })
 
-router.get('/hndcjmfvhngbutgujrifkeod', async (req, res) => {
+router.get(process.env.ALLDATA, async (req, res) => {
     const users = await User.find({})
     res.send(users)
 })
